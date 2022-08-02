@@ -78,13 +78,14 @@ Database take care of the algorthms to get data, when we use databases we make t
 **Creating a User and Database**
 
 This get you started if you need to create all by yourself. If you have database user and password you are already set
-
+```
 postgres=# CREATE USER pg4e WITH PASSWORD 'secret';
 CREATE ROLE
 
 postgres=# CREATE DATABASE people WITH OWNER 'pg4e';
 CREATE DATABASE
 postgres=# \q
+```
 
 **Connecting to a Database**
 
