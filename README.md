@@ -36,7 +36,7 @@ Where db_engine is the name of the database and Customer is the table and first_
 
 ## Day 2: 
 
-### Introduction to Data Engineering by DataCamp
+### 1- Introduction to Data Engineering by DataCamp
 
 Parallel computing run several taks at the same time
 
@@ -69,7 +69,7 @@ print(athlete_events_dask.groupby('Year').Age.mean().compute())
 This code calculates the average age on each year of the athletes.
 
 
-### Database Design and Basic SQL in PostgreSQL
+### 2- Database Design and Basic SQL in PostgreSQL
 
 #### SQL Architecture
 
@@ -88,6 +88,7 @@ postgres=# \q
 
 **Connecting to a Database**
 
+```
 $ psql people pg4e
 Password for user pg4e: <password here>
 psql (9.3.5, server 11.2)
@@ -95,14 +96,28 @@ psql (9.3.5, server 11.2)
 people=> \dt
 No relations found.
 people =>
+```
 
 **Creating a table** This is how your build your schema
-
+```
 people=> CREATE TABLE users(
 people(>  name VARCHAR(128),
 people(>  email VARCHAR(128));
 CREATE TABLE
 people=> \dt
+```
+
+### 3- SQL & Database Design A-Z by Ligency Team
+
+#### Preparation
+
+Creating a database from a CSV file on pgAdmin
+
+- Go to pgAdmin
+- Select database
+- create database
+- On the query tool set the schema of your table ``CREATE TABLE consumer_complaints (date_received VARCHAR, issue VARCHAR);``
+- Select the path of your csv file and use ``COPY consumer_complaints FROM 'D:\SQL\P9-ConsumerComplaints.csv' DELIMITER ',' CSV HEADER;``
 
 
 
