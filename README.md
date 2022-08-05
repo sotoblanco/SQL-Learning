@@ -120,7 +120,9 @@ Creating a database from a CSV file on pgAdmin
 - On the query tool set the schema of your table ``CREATE TABLE consumer_complaints (date_received VARCHAR, issue VARCHAR);``
 - Select the path of your csv file and use ``COPY consumer_complaints FROM 'D:\SQL\P9-ConsumerComplaints.csv' DELIMITER ',' CSV HEADER;``
 
+## Day 2
 
+### 3- SQL & Database Design A-Z by Ligency Team
 
 
 
