@@ -122,9 +122,25 @@ Creating a database from a CSV file on pgAdmin
 
 ## Day 2
 
-### 3- SQL & Database Design A-Z by Ligency Team
+### Connect Python to Postgresql
 
+import pandas as pd
+import sqlalchemy
 
+```
+# This is the structure of the database url
+DATABASE_URL=f'postgresql://{user}:{password}@{hostname}:{port}/{database-name}'
+
+# the user name is user-password is secrte-hostname is localhost-port is 5432 in the supliers database
+engine = sqlalchemy.create_engine('postgresql://user:secret@localhost:5432/suppliers')
+
+# read a csv file in your directory
+data = pd.read_csv('vendors_new.csv')
+
+# create the vendors table or append the data
+data.to_sql('vendors', engine, if_exists='append')
+
+```
 
 
 
