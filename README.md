@@ -143,4 +143,70 @@ data.to_sql('vendors', engine, if_exists='append')
 ```
 
 
+## Day 3
+
+### Database Design and Basic SQL in PostgreSQL
+
+Working with tables
+
+Let's explore some commands on a table called *users* with variables called *name* and *email*
+**SQL : Insert**
+The insert statement inserts a row into a table
+
+```sql
+INSERT INTO users (name, email) VALUES ('Chuck', 'csev@umich.edu');
+```
+
+**SQL: Delete**
+Deletes a row in a table based on selection criteria
+
+```sql
+DELETE FROM users WHERE email = 'ted@umich.edu'
+```
+**SQL: Update**
+Allows updating of a field with a where clause
+
+```sql
+UPDATE users SET name='Charles'WHERE email='csev@umich.edu';
+```
+> ***Delete*** and ***Update*** works as a "loop" in which it would find from all the entries of your database, that's way often we might need to use it with a ***Where*** clause to match only rows that meets the criteria. Database has an efficient way to find data so is not working as a loop per ser.
+
+**SQL: Select**
+Retrieves a group of records-you can retrieve all the records or a subset of the records with a ***WHERE*** clause
+
+```sql
+SELECT * FROM users;
+SELECT * FROM users WHERE email='csev@umich.edu';
+```
+**SQL: ORDER BY**
+You can add an ***ORDER BY*** clause to ***SELECT*** statements to get results sorted in ascending or descending order.
+
+```sql
+SELECT * FROM users ORDER BY email;
+```
+**SQL: LIKE**
+works as a wildcard matching in a ***WHERE*** clause using the ***LIKE*** operator
+
+The below code find all rows that has an 'e' on their name
+```sql
+SELECT * FROM users WHERE name LIKE '%e%';
+```
+The **LIKE** operator is slow since it has to look for every row
+
+**SQL: LIMIT/OFFSET**
+We can request the first 'n' rows, or the first "n" rows after skipping some rows.
+
+```sql
+SELECT * FROM users ORDER BY email DESC LIMIT 2;
+SELECT * FROM users ORDER BY email OFFSET LIMIT 2;
+```
+
+**SQL: COUNT**
+
+You can request the receive the count of the rows that would be retrieved instead of the rows
+
+```sql
+SELECT COUNT(*) FROM users;
+SELECT COUNT(*) FROM users WHERE email='csev@umich.edu';
+```
 
