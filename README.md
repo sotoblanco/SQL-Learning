@@ -210,3 +210,65 @@ SELECT COUNT(*) FROM users;
 SELECT COUNT(*) FROM users WHERE email='csev@umich.edu';
 ```
 
+
+## Day 4
+
+### Database Design and Basic SQL in PostgreSQL
+
+***Data types in PostgreSQL***
+
+- Text fields (small and large)
+- Binary fields (small and large)
+- Numeric fields
+- AUTO_INCREMENT fields
+
+**String fields**
+
+- CHAR(n): allocates the entire space (faster for small string where the length is known)
+- VARCHAR(n): allocates a variable amount of space depending on the data length (less space)
+
+**Text fields**
+
+- TEXT: have a character set - paragraphs or HTML pages
+
+**Binary fields** (rarely used)
+
+- BYTEA(n): Small images - data; Not indexed or sorted
+
+**Integer Numbers**
+
+- SMALLINT (-32768, + 32768)
+- INTEGER (2 Billion)
+- BIGINT (10**18 ish)
+
+**Floating Point Numbers**
+
+- REAL (32-bit) 10\**38 with seven digits of accuracy
+- DOUBLE PRECISION (64-bit) 10**308 with 14 digits of accuracy
+- NUMERIC (accuracy, decimal) -Specified digits of accuracy and digits after the decimal points
+
+**Dates**
+- TIMESTAMP - 'YYYY-MM-DD HH:MM:SS'
+- DATE - 'YYYY-MM-DD'
+- TIME - 'HH:MM:SS'
+- Built-in PostgreSQL function NOW()
+
+***Database keys and indexes in PostgreSQL***
+
+**AUTO_INCREMENT**
+
+```sql
+CREATE TABLE users (
+	id SERIAL,
+	name VARCHAR(128),
+	email VARCHAR(128) UNIQUE, # only unique strings
+	PRIMARY KEY (id)
+	);
+```
+**INDEXES**
+
+B-Trees
+The data is stores in blocks of disk that is sorted
+
+Hashes
+Is a has function in any algorithm
